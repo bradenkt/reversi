@@ -1,23 +1,36 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Enter your user name for Reversi</title>
+    <script type="text/javascript">
+        function submitForm() {
+            var username= $('#username').val();
+            window.location.href = 'lobby.html?username='+username;
+        }
+    </script>
   </head>
   <body>
     <div class='container-fluid text-center'>
     	<div class="row">
     		<div class="col" id="name-header">
-    			<h2>This is the name page</h2>
+    			<h2>Enter your user name</h2>
     		</div>
-    		
     	</div>
+        <div class='row'>
+            <div class="col">
+                <form onsubmit='submitForm(); return false;' class="form-inline">
+                    <div class='form-group'>
+                        <label for="username" class="col-form-label sr-only">Enter a username</label>
+                        <input class="form-control" type='text' value='' id='username' placeholder="enter your username" type="" name="">
+                    </div>
+                    <button type='submit' class='btn btn-default btn-primary'>Done</button>
+                </form>
+            </div>
+        </div>
     </div>
 
     <!-- Optional JavaScript -->
