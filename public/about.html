@@ -7,30 +7,31 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style type="text/css">
+        #about-header {
+            background-color: green;
+            color: white;
+        }
+
+    </style>
 
     <title>Hello, world!</title>
   </head>
   <body>
     <div class='container-fluid text-center'>
     	<div class="row">
-    		<div class="col">
-    			<img class="img-fluid" src="assets/images/top-splash.png" alt="Reversi logo"/>
+    		<div class="col" id="about-header">
+    			<h2>About</h2>
     		</div>
-    		
-    	</div>
+        </div>
+    	<div class="row">
+            <div class="col" id="about-paragraph">
+                <p>Reversi is a game.</p>
+            </div>   
+        </div>	
     	<div class="row">
     		<div class="col">
-    			<a href="name.html" class="btn btn-lg btn-secondary">Let's play</a>
-    		</div>
-    	</div>
-    	<div class="row">
-    		<div class="col">
-    			<img class="img-fluid" src="assets/images/bottom-splash.png" alt="Reversi logo 2"/>
-			</div>
-    	</div>
-    	<div class="row">
-    		<div class="col">
-    			<a href="about.html" class="btn btn-lg btn-info">About</a>
+    			<a href="index.html" class="btn btn-lg btn-info">Home</a>
     		</div>
     		<div class="col">
     			<a href="https://en.wikipedia.org/wiki/Reversi" class="btn btn-lg btn-info">Rules</a>
