@@ -30,7 +30,7 @@ socket.on('join_room_response',function(payload){
 		alert(payload.message);
 		return;
 	}
-	$('messages').append('<p>New user joined the room: '+payload.username+'</p>');
+	$('#messages').append('<p>New user joined the room: '+payload.username+'</p>');
 });
 
 socket.on('send_message_response',function(payload){
@@ -38,7 +38,7 @@ socket.on('send_message_response',function(payload){
 		alert(payload.message);
 		return;
 	}
-	$('messages').append('<p><b>'+payload.username+' says:</b> '+payload.message+'</p>');
+	$('#messages').append('<p><b>'+payload.username+' says:</b> '+payload.message+'</p>');
 });
 
 function send_message(){
@@ -48,6 +48,7 @@ function send_message(){
 	payload.message = $('#send_message_holder').val();
 	console.log('*** Client Log Message: \'send_message\' payload: '+JSON.stringify(payload));
 	socket.emit('send_message',payload);
+	$('#send_message_holder').val('')
 }
 
 $(function(){ 
