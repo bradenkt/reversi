@@ -1,5 +1,5 @@
 // this is the main.js file
-
+$(document).ready(function() {
 function getURLParameters(whichParam) 
 {
 	var pageURL = window.location.search.substring(1);
@@ -16,4 +16,13 @@ if('undefined' == typeof username || !username){
 	username = 'Anonymous_'+Math.random();
 }
 
-$('#messages').append('<h4>'+username+'</h4>');
+$('#messages').append('<h4>'+username+'</h4>');\
+
+/* Connect to socket server*/
+
+var socket = io.connect();
+
+socket.on('log',function(array){
+	console.log.apply(console,array);
+});
+});
