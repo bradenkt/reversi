@@ -132,7 +132,7 @@ io.sockets.on('connection',function(socket){
 		log(['join_room success']);
 	});
 
-socket.on('disconnect', function(){
+socket.on('disconnect',function(){
 		log(['Client disconnected '+JSON.stringify(players[socket.id])]);
 
 		if('undefined' !== typeof players[socket.id] && players[socket.id]){
@@ -143,13 +143,12 @@ socket.on('disconnect', function(){
 							socket_id: socket.id
 							};	
 			delete players[socket.id];
-			io.in(room).emit('player_disonnected',payload);
+			io.in(room).emit('player_disconnected',payload);
 		}
 	});
-
 /*Send message command*/
 	socket.on('send_message', function(payload){
-		log('server received a command', 'send_message',payload);
+		log(['server received a command', 'send_message',payload]);
 		if(('undefined' === typeof payload) || !payload){
 			var error_message = 'send_message had no payload, command aboarted';
 			log(error_message);
@@ -197,6 +196,6 @@ socket.on('disconnect', function(){
 								message: message
 							};
 		io.sockets.in(room).emit('send_message_response',success_data);
-		log('Message sent to room '+ room + ' by ' +username)
+		log(['Message sent to room '+ room + ' by ' +username])
 	});
 });

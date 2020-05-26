@@ -83,6 +83,7 @@ else{
 	newNode.hide();
 	$('#messages').append(newNode);
 	newNode.slideDown(1000);
+
 });
 
 /*What to do when the server says that someone has left a room*/
@@ -105,11 +106,12 @@ if(dom_elements.length != 0) {
 }
 
 /*Manage the message that a new player has left*/
-	var newHTML = ('<p>'+payload.username+' has left the lobby</p>');
+	var newHTML = '<p>'+payload.username+' has left the lobby</p>';
 	var newNode = $(newHTML);
 	newNode.hide();
 	$('#messages').append(newNode);
 	newNode.slideDown(1000);
+	console.log('3');
 });
 
 socket.on('send_message_response',function(payload){
@@ -139,9 +141,9 @@ function makeInviteButton(){
 
 $(function(){ 
 	var payload = {};
-	payload.room = chat_room
+	payload.room = chat_room;
 	payload.username = username;
 
 	console.log('*** Client Log Message: \'join_room\' payload: '+JSON.stringify(payload));
 	socket.emit('join_room',payload);
-})
+});
