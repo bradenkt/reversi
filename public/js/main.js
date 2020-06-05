@@ -311,6 +311,7 @@ socket.on('game_update', function(payload){
         return;
     }
     $('#my_color').html('<h3 id="my_color">I am '+my_color+'</h3>');
+    $('#my_color').append('<h4>It is '+payload.game.whose_turn+'\'s turn</h4>');
 
     /*animate changes to the board*/
 
@@ -360,9 +361,14 @@ socket.on('game_update', function(payload){
                 else {
                     $('#'+row+'_'+column).html('<img src="assets/images/error.gif" alt="error"/>');
                 }
-                /*set up interactivity*/
-                $('#'+row+'_'+column).off('click');
-                if(board[row][column] == ' '){
+            }
+
+            /*set up interactivity*/
+            $('#'+row+'_'+column).off('click');
+            $('#'+row+'_'+column).addClass('hovered_over');
+
+            if(payload.game.whose_turn === my_color){
+                if(payload.game.legal_moves[row][column] === my_color.substr(0,1)){
                 	$('#'+row+'_'+column).addClass('hovered_over');
                 	$('#'+row+'_'+column).click(function(r,c){
                 		return function(){
