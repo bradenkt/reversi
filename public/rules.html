@@ -1,30 +1,23 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/index.css">
 
-    <title>Enter your user name for Reversi</title>
-    <script type="text/javascript">
-        function submitForm() {
-            var username= $('#username').val();
-            window.location.href = 'lobby.html?username='+username;
-        }
-    </script>
+    <title>Hello, world!</title>
   </head>
   <body>
     <div class="container h-100 d-flex">
         <div class="jumbotron my-auto">
-            <h1 id="nameheader" class="display-3">What's your name?</h1>
-            <form onsubmit='submitForm(); return false;' class="form">
-                <div id="nameform" class='form-group'>
-                    <label for="username" class="col-form-label sr-only">Enter a username</label>
-                    <input class="form-control" type='text' value='' id='username' placeholder="enter your username" type="" name="">
-                </div>
-                <button type='submit' class='btn btn-lg btn-dark'>Enter Lobby</button>
-            </form>
+            <h1 class="display-3">Rules</h1>
+            <p class="lead">Each piece played must be laid adjacent to an opponent's piece so that the opponent's piece or a row of opponent's pieces is flanked by the new piece and another piece of the player's colour. All of the opponent's pieces between these two pieces are 'captured' and turned over to match the player's colour. It can happen that a piece is played so that pieces or rows of pieces in more than one direction are trapped between the new piece played and other pieces of the same colour. In this case, all the pieces in all viable directions are turned over. The game is over when neither player has a legal move (i.e. a move that captures at least one opposing piece) or when the board is full.</p>
+            <a href="name.html" class="btn btn-lg btn-dark">Continue</a>
         </div>
     </div>
 

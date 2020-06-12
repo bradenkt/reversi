@@ -222,7 +222,7 @@ socket.on('send_message_response',function(payload){
 
 function makeInviteButton(socket_id){
 
-	var newHTML = '<button type=\'button\' class=\'btn btn-outline-primary\'>Invite</button>';
+	var newHTML = '<button type=\'button\' class=\'btn btn-outline-dark\'>Invite</button>';
 	var newNode = $(newHTML);
 	newNode.click(function(){
 		invite(socket_id);
@@ -232,7 +232,7 @@ function makeInviteButton(socket_id){
 
 function makeInvitedButton(socket_id){
 
-	var newHTML = '<button type=\'button\' class=\'btn btn-primary\'>Invited</button>';
+	var newHTML = '<button type=\'button\' class=\'btn btn-dark\'>Invited</button>';
 	var newNode = $(newHTML);
 	newNode.click(function(){
 		uninvite(socket_id);
@@ -265,7 +265,7 @@ $(function(){
 	console.log('*** Client Log Message: \'join_room\' payload: '+JSON.stringify(payload));
 	socket.emit('join_room',payload);
 
-	$('#quit').append('<a href="lobby.html?username='+username+'" class="btn btn-danger btn-default active" role="button" aria-pressed="true">Quit</a>');
+	$('#quit').append('<a href="lobby.html?username='+username+'" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">Quit</a>');
 	
 });
 
